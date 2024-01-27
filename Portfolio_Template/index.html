@@ -11,7 +11,7 @@
         <!-- ===== CSS ===== -->
         <link rel="stylesheet" href="assets/css/styles.css">
 
-        <title>Portfolio Personal Complete</title>
+        <title>Portfolio Template</title>
     </head>
     <body>
         <!--===== SCROLL TOP =====-->
@@ -41,7 +41,7 @@
         <main class="l-main">
             <!--===== HOME =====-->
             <section class="home" id="home">
-                <div class="home__contain bd-container bd-grid">
+                <div class="home__container bd-container bd-grid">
                     <div class="home__data">
                         <span class="home__greeting">Hello, my name is</span>
                         <h1 class="home__name">SJ</h1>
@@ -67,14 +67,15 @@
                 <span class="section-subtitle">My history</span>
                 <h2 class="section-title">about me</h2>
 
-                <div class="about_container bd-grid">
+                <div class="about__container bd-grid">
                     <div class="about__data bd-grid">
                         <p class="about__description">
-                            <span>Hello, I am <br> Insert about me here</span>
+                            <span>Hello, I am <br></span>
+                            Insert about me here
                         </p>
                         <div>
                             <span class="about__number">04</span>
-                            <span class="about__achievement">years of <br> experience</span>
+                            <span class="about__achievement">years of experience</span>
                         </div>
                         <div>
                             <span class="about__number">19</span>
@@ -233,7 +234,7 @@
                             <span class="contact__description">dude@guy.com</span>
                         </div>
                         <div class="contact__box">
-                            <i class='bx bx-envelope contact__icon'></i>
+                            <i class='bx bx-message-rounded-edit contact__icon'></i>
                             <h3 class="contact__title">Chat</h3>
                             <div class="contact__description">
                                 <a href="#" class="contact__social"><i class='bx bxl-facebook'></i></a>
@@ -253,12 +254,14 @@
                         </div>
                         <div class="contact__inputs">
                             <label>
-                                <input type="text" placeholder="Project" class="contact__input">
+                                <input type="text" placeholder="Subject" class="contact__input">
                             </label>
                             <label>
-                                <input type="number" placeholder="Number" class="contact__input">
+                                <input type="text" placeholder="Number" class="contact__input">
                             </label>
-                            <label for=""></label><textarea name="" id="" cols="0" rows="7" class="contact__inputs"></textarea>
+                        </div>
+                        <div class="testing__button">
+                        <input type="submit" value="Send" class="button button-light">
                         </div>
                     </form>
                 </div>
@@ -269,7 +272,16 @@
 
         <!--===== FOOTER =====-->
         <footer class="footer">
-            
+            <div class="footer__container bd-container">
+                <h1 class="footer__title">SJ</h1>
+                <p class="footer__description-text">Thanks for visiting my personal website!</p>
+                <div class="footer__social">
+                    <a href="#" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#" class="home__social-icon"><i class='bx bxl-github'></i></a>
+                    <a href="#" class="home__social-icon"><i class='bx bxl-dribbble'></i></a>
+                </div>
+                <p class="footer__copy">123 All rights reserved</p>
+            </div>
         </footer>
         
         <!-- ===== MIXITUP FILTER ===== -->
@@ -277,7 +289,7 @@
 
         
         <!-- ===== GSAP ===== -->
-        <script src=""></script>
+        <script src="assets/js/gsap.min.js"></script>
         
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
