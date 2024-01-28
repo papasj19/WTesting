@@ -2,6 +2,8 @@
   <main class="flex justify-center items-center flex-col sm:flex-row h-screen"
         style="background-image: url('src/assets/cat.png'); background-size: cover;">
 
+
+
     <!-- Sign Up Section -->
     <div class="p-4 w-full sm:w-1/2">
       <div  class="modal">

@@ -1,10 +1,16 @@
 <script setup>
 
+import EducationHistory from "@/components/EducationHistory.vue";
+import Qualifications_Accordian from "@/components/Qualifications_Accordian.vue";
 </script>
 
 <template>
-  <text>testing qual</text>
+  <div class="qual_body_big">
 
+  <EducationHistory/>
+
+    <div class="qual_body">
+  <div class="qual_body_left">
   <ol class="relative border-s border-gray-200 dark:border-gray-700">
     <li class="mb-10 ms-4">
       <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
@@ -28,8 +34,8 @@
       <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
     </li>
   </ol>
-
-
+  </div>
+  <div class="qual_body_min">
   <div class="mb-1 text-base font-medium dark:text-white">Dark</div>
   <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
     <div class="bg-gray-600 h-2.5 rounded-full dark:bg-gray-300" style="width: 45%"></div>
@@ -59,10 +65,40 @@
     <div class="bg-purple-600 h-2.5 rounded-full dark:bg-purple-500" style="width: 45%"></div>
   </div>
 
-
+  </div>
+  </div>
+    <Qualifications_Accordian/>
+  </div>
 
 </template>
 
 <style scoped>
+
+.qual_body_big{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.qual_body{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10%;
+
+}
+
+.qual_body_left{
+  width: 65%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+}
+
+.qual_body_min{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+
 
 </style>
