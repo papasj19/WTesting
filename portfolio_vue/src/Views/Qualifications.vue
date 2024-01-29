@@ -6,8 +6,9 @@ import Qualifications_Accordian from "@/components/Qualifications_Accordian.vue"
 
 <template>
   <div class="qual_body_big">
-
+  <div class="edu_hist">
   <EducationHistory/>
+  </div>
 
     <div class="qual_body">
   <div class="qual_body_left">
@@ -74,6 +75,12 @@ import Qualifications_Accordian from "@/components/Qualifications_Accordian.vue"
 
 <style scoped>
 
+.edu_hist{
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
+}
+
 .qual_body_big{
   display: flex;
   flex-direction: column;
@@ -84,6 +91,7 @@ import Qualifications_Accordian from "@/components/Qualifications_Accordian.vue"
   display: flex;
   flex-direction: row;
   padding-top: 10%;
+  margin-left: 2.5rem;
 
 }
 

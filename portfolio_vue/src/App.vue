@@ -15,7 +15,7 @@ const navigateTo = (page) => {
 
 <template>
 
-  <header><navbar /></header>
+  <navbar />
   <router-view />
 
 

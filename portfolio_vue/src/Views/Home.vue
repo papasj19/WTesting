@@ -1,159 +1,262 @@
-<template>
-  <main class="flex justify-center items-center flex-col sm:flex-row h-screen"
-        style="background-image: url('src/assets/cat.png'); background-size: cover;">
+<script setup>
 
+import {useRouter} from "vue-router";
+import Myfooter from "@/components/myfooter.vue";
 
+const router = useRouter();
 
-    <!-- Sign Up Section -->
-    <div class="p-4 w-full sm:w-1/2">
-      <div  class="modal">
-        <form class="modal-content">
-          <div class="container">
-            <section class="bg-transparent dark:bg-transparent">
-              <div class="flex flex-col items-center justify-center px-6 py-4 mx-auto md:h-screen lg:py-0">
-                <div
-                    class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                  <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                    <!-- Sign Up Title -->
-                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                      Sign up
-                    </h1>
-                    <!-- Sign Up Form -->
-                    <form class="space-y-4 md:space-y-6" action="#">
-                      <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
-                          email</label>
-                        <!-- Email Input -->
-                        <input type="email" name="email" id="email"
-                               class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                               placeholder="name@company.com" required="" v-model="playerMailS">
-                      </div>
-                      <!-- Password Input -->
-                      <div>
-                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                        <input type="password" name="password" id="password" placeholder="••••••••"
-                               class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                               required="" v-model="playerPasswordS">
-                      </div>
-                      <!-- Confirm Password Input -->
-                      <div>
-                        <label for="confirm-password"
-                               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm
-                          password</label>
-                        <input type="confirm-password" name="confirm-password" id="confirm-password"
-                               placeholder="••••••••"
-                               class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                               required="" v-model="playerPasswordCS">
-                      </div>
-                      <div class="flex items-start">
-                        <!-- Terms and Conditions Checkbox -->
-                        <div class="flex items-center h-5">
-                          <input id="terms" aria-describedby="terms" type="checkbox"
-                                 class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                                 required="">
-                        </div>
-                        <div class="ml-3 text-sm">
-                          <!-- Terms and Conditions Label -->
-                          <label for="terms" class="font-light text-gray-500 dark:text-gray-300">I accept the <a
-                              class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Terms
-                            and Conditions</a></label>
-                        </div>
-                      </div>
-                      <!-- Sign Up Button -->
-                      <button type="submit"
-                              class="w-full text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-500 dark:hover:bg-gray-600 dark:focus:ring-gray-800"
-                              v-on:click.prevent="createNewUser()">
-                        Sign up
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <!-- Log In Section -->
-    <div class="p-4 w-full sm:w-1/2">
-      <div class="modal">
-        <form class="modal-content" >
-          <div class="container">
-            <section class="bg-transparent dark:bg-transparent">
-              <div class="flex flex-col items-center justify-center px-6 py-4 mx-auto md:h-screen lg:py-0">
-                <div
-                    class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                  <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                    <!-- Log In Title -->
-                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                      Log in
-                    </h1>
-                    <!-- Log In Form -->
-                    <form class="space-y-4 md:space-y-6" action="#">
-                      <!-- Email Input -->
-                      <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
-                          email</label>
-                        <input type="email" name="email" id="email"
-                               class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                               placeholder="name@company.com" required="" >
-                      </div>
-                      <!-- Password Input -->
-                      <div>
-                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                        <input type="password" name="password" id="password" placeholder="••••••••"
-                               class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                               required="" >
-                      </div>
-                      <!-- Remember Me Checkbox and Forgot Password Link -->
-                      <div class="flex items-center justify-between">
-                        <div class="flex items-start">
-                          <!-- Remember Me Checkbox -->
-                          <div class="flex items-center h-5">
-                            <input id="remember" aria-describedby="remember" type="checkbox"
-                                   class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                                   required="">
-                          </div>
-                          <div class="ml-3 text-sm">
-                            <!-- Remember Me Label -->
-                            <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
-                          </div>
-                        </div>
-                        <!-- Forgot Password Link -->
-                        <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot
-                          password?</a>
-                      </div>
-                      <!-- Log In Button -->
-                      <button type="submit"
-                              class="w-full text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-500 dark:hover:bg-gray-600 dark:focus:ring-gray-800"
-                              >
-                        Log in
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </form>
-      </div>
-    </div>
-  </main>
-</template>
-
-<script>
-
-export default {
-  data() {
-    return {
-
-    };
-  },
-  methods: {
-    navigateTo(page) {
-      this.$router.push(`/${page}`);
-    }
-  }
+const navigateTo = (page) => {
+  router.push(`/${page}`);
 };
 </script>
+
+
+
+
+
+<template>
+  <div class="home-container">
+  <div class="welcome">
+    <div class="left_side">
+    <div class="home__data">
+      <span class="home__greeting">Hello, I am</span>
+      <h1 class="home__name">SJ</h1>
+      <span class="home__profession">Web Developer</span>
+
+
+
+      <a download="" href="/src/assets/person.jpg" class="button button-light">Download CV</a>
+      <div class="home__social">
+        <a href="#" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+        <a href="#" class="home__social-icon"><i class='bx bxl-github'></i></a>
+        <a href="#" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
+      </div>
+    </div>
+
+    </div>
+    <img class="h-auto max-w-xs ms-auto" src="/src/assets/person.jpg" alt="image description">
+
+  </div>
+
+  <div class="mission">
+
+    <h1 class="mission__name">Who is SJ?</h1>
+    <div class="mission__description">
+      <i class='bx bx-laptop'>  A student of computers that enjoys all things technology
+        <i class='bx bx-laptop'></i></i>
+    </div>
+
+    <div class="mission__description">
+      <i class='bx bx-code-alt'>  Programming enthusiast who is always excited to acquire new skills
+        <i class='bx bx-code-alt'></i></i>
+    </div>
+    <div class="mission__description">
+      <i class='bx bxs-hard-hat' >  Forged into a jack of all trades through many different job experiences
+        <i class='bx bxs-hard-hat' ></i></i>
+    </div>
+
+
+
+
+    <hr class="w-96 h-1 mx-auto my-4 bg-red-50 border-0 rounded md:my-10 dark:bg-red-50">
+
+
+
+    <h1 class="bring__name">What does SJ bring?</h1>
+
+    <div class="bring">
+      <div class="bring__description">
+       <p>I try everyday to put on a big smile and accomplish as much as possible. This is what was taught to me throughout my family's years of entrepreneurship.  </p>
+      </div>
+    <div class="bring__description">
+      <p>As an individual that has enjoyed many hobbies, it can be beneficial to analyze similarities according to a different scope. By utilizing programming concepts in sports and vice-versa, I allow myself to step outside normal pattern recognition and look at the true symmetry that exists </p>
+    </div>
+
+    </div>
+    <hr class="w-96 h-1 mx-auto my-4 bg-red-50 border-0 rounded md:my-10 dark:bg-red-50">
+
+
+    <h1 class="bring__name">What are SJ's personal goals?</h1>
+
+    <div class="bring">
+      <div class="bring__description">
+        <p>My first goal is to one year complete all of the days in an <a href="https://adventofcode.com">Advent of Code</a> session</p>
+      </div>
+      <div class="bring__description">
+        <p>To create, develop, and launch a completed video game by cohesively working with a team</p>
+      </div>
+      <div class="bring__description">
+        <p>My last goal is to learn as many languages (people and programming!) as possible</p>
+      </div>
+
+    </div>
+
+
+    <hr class="w-96 h-1 mx-auto my-4 bg-red-50 border-0 rounded md:my-10 dark:bg-red-50">
+    <div class="bring">
+      <div class="bring__description">
+        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+           @click="navigateTo('Qualifications')">To see my education and professional history, you can click here or on the top menu tab named 'About'</a>
+      </div>
+      <div class="bring__description">
+        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+           @click="navigateTo('Services')">To view more about me and what I offer, you can click here or on the top menu tab named 'Services'</a>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  </div>
+
+  <myfooter/>
+
+
+
+</template>
+
+<style>
+
+.myGuy{
+  width: 50%;
+}
+
+.bring{
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.home-container {
+  background-image: url('src/assets/bckgnd.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: scroll;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding-bottom: 7rem;
+}
+
+.mission__name{
+  font-size: 2.5rem;
+}
+
+.bring__name{
+  font-size: 2.0rem;
+}
+
+.bring__description{
+  display: flex;
+  flex-direction: row;
+  padding-top: .5rem;
+  padding-bottom: 1rem;
+}
+
+.mission__description{
+  display: flex;
+  flex-direction: row;
+  padding-top: .5rem;
+  padding-bottom: 1rem;
+
+}
+
+.mission{
+  background-color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: .5rem;
+  margin-right: calc(100vw - 80vw);
+  margin-left: calc(100vw - 80vw);
+
+}
+
+.left_side{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button{
+  display: inline-block;
+  background-color: blue;
+  color: black;
+  padding: .5rem .5rem;
+  border-radius: .25rem;
+  transition: .3s;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.button:hover{
+  background-color: darkblue;
+  color: white;
+}
+
+.button-light{
+  background-color: lightblue;
+}
+
+
+  .welcome{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin-left: calc(100vw - 75vw);
+    margin-right: calc(100vw - 75vw);
+
+  }
+
+  .home__data{
+    border-left: 4px solid rgb(128, 128, 128);
+    padding-left: 1.5rem;
+    color: cornflowerblue;
+  }
+
+  .home__social{
+    display: flex;
+    justify-content: center;
+  }
+
+  .home__name{
+    font-size: 2.5rem;
+  }
+
+  .home__greeting, .home__profession{
+    display: block;
+    font-weight: 700;
+  }
+
+  .home__greeting{
+    font-size: .813rem;
+  }
+
+  .home__profession{
+    font-size: .938rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .home__social-icon{
+    color: cornflowerblue;
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+
+
+@media screen and (max-width: 576px){
+.welcome{
+  flex-direction: column;
+}
+
+  img{
+    width: 100%;
+  }
+
+
+}
+</style>
+
+
