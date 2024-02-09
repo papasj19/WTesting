@@ -37,7 +37,7 @@ body{
 }
 .card{
   position: relative;
-  width: 800px;
+  width: 400px;
   height: 350px;
   border-radius: 20px;
   display: flex;
